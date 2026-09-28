@@ -1,10 +1,10 @@
 extends Node2D
 
 # Constant values in the script
-@onready var speed: float = 60.0
+const speed: float = 60.0
 
 # Regular variables in the script
-var direction: Vector2 = Vector2(1, 1).normalized()
+var direction: Vector2 = Vector2.ZERO
 
 # These variables are used to call on each ray coast node labeled RayCastUp, 
 # RayCastDown, RayCastLeft, and RayCastRight

@@ -2,7 +2,7 @@ extends Area2D
 
 @onready var timer: Timer = $Timer
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(body: CharacterBody2D) -> void:
 	print("YOU DIED!")
 	# Slows down the engine to half speed when hit by an enemy
 	Engine.time_scale = 0.5

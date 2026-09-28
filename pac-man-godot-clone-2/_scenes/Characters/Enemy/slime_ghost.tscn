@@ -126,6 +126,7 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_5w0vt")
 animation = &"Move"
 autoplay = "Move"
+frame = 1
 
 [node name="DeathZone" parent="." unique_id=2037105438 instance=ExtResource("3_cw8o7")]
 
@@ -135,16 +136,16 @@ shape = SubResource("RectangleShape2D_avb7e")
 
 [node name="RayCastUp" type="RayCast2D" parent="." unique_id=2057653372]
 position = Vector2(0, 6)
-target_position = Vector2(0, -13)
+target_position = Vector2(0, -12)
 
 [node name="RayCastDown" type="RayCast2D" parent="." unique_id=907747687]
 position = Vector2(0, 6)
-target_position = Vector2(0, 13)
+target_position = Vector2(0, 12)
 
 [node name="RayCastLeft" type="RayCast2D" parent="." unique_id=1785064106]
 position = Vector2(0, 6)
-target_position = Vector2(-14, 0)
+target_position = Vector2(-13, 0)
 
 [node name="RayCastRight" type="RayCast2D" parent="." unique_id=1707775788]
 position = Vector2(0, 6)
-target_position = Vector2(14, 0)
+target_position = Vector2(13, 0)
