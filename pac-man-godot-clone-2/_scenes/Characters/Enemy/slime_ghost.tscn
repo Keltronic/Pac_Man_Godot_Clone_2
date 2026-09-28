@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://b43qxfcqfkhbj"]
+
+[ext_resource type="Texture2D" uid="uid://pctusqtgcu0n" path="res://_assets/Brackey's_Assets/Bracky'sSprites/sprites/slime_green.png" id="1_fyy7v"]
+[ext_resource type="Script" uid="uid://bvankwmq1eong" path="res://_scripts/Characters/Enemy/slime_ghost.gd" id="1_qyjfm"]
+[ext_resource type="Texture2D" uid="uid://boqkg17psudvh" path="res://_assets/Brackey's_Assets/Bracky'sSprites/sprites/slime_purple.png" id="2_qyjfm"]
+[ext_resource type="PackedScene" uid="uid://cmjvxalh3sjsu" path="res://_scenes/Environment/death_zone.tscn" id="3_cw8o7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvcw3"]
+atlas = ExtResource("1_fyy7v")
+region = Rect2(48, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ks35"]
+atlas = ExtResource("1_fyy7v")
+region = Rect2(72, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydmyr"]
+atlas = ExtResource("1_fyy7v")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_082tv"]
+atlas = ExtResource("1_fyy7v")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7eaj3"]
+atlas = ExtResource("1_fyy7v")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqcht"]
+atlas = ExtResource("2_qyjfm")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blaw8"]
+atlas = ExtResource("2_qyjfm")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sd5aa"]
+atlas = ExtResource("2_qyjfm")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13bkn"]
+atlas = ExtResource("2_qyjfm")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hw5xq"]
+atlas = ExtResource("1_fyy7v")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sm2gi"]
+atlas = ExtResource("1_fyy7v")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eh1lm"]
+atlas = ExtResource("1_fyy7v")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqfcr"]
+atlas = ExtResource("1_fyy7v")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5w0vt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvcw3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ks35")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydmyr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_082tv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7eaj3")
+}],
+"loop": 1,
+"name": &"Death",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqcht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blaw8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sd5aa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13bkn")
+}],
+"loop": 1,
+"name": &"Fear",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hw5xq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sm2gi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eh1lm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqfcr")
+}],
+"loop": 1,
+"name": &"Move",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_avb7e"]
+size = Vector2(8, 10.5)
+
+[node name="SlimeGhost" type="Node2D" unique_id=1948393237]
+script = ExtResource("1_qyjfm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=828235926]
+visibility_layer = 4
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_5w0vt")
+animation = &"Move"
+autoplay = "Move"
+
+[node name="DeathZone" parent="." unique_id=2037105438 instance=ExtResource("3_cw8o7")]
+
+[node name="EnemyCollision" type="CollisionShape2D" parent="DeathZone" unique_id=645845722]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_avb7e")
+
+[node name="RayCastUp" type="RayCast2D" parent="." unique_id=2057653372]
+position = Vector2(0, 6)
+target_position = Vector2(0, -13)
+
+[node name="RayCastDown" type="RayCast2D" parent="." unique_id=907747687]
+position = Vector2(0, 6)
+target_position = Vector2(0, 13)
+
+[node name="RayCastLeft" type="RayCast2D" parent="." unique_id=1785064106]
+position = Vector2(0, 6)
+target_position = Vector2(-14, 0)
+
+[node name="RayCastRight" type="RayCast2D" parent="." unique_id=1707775788]
+position = Vector2(0, 6)
+target_position = Vector2(14, 0)
