@@ -4,7 +4,7 @@ extends Node2D
 const speed: float = 60.0
 
 # Regular variables in the script
-var direction: Vector2 = Vector2.ZERO
+var direction: Vector2 = Vector2.RIGHT
 
 # These variables are used to call on each ray coast node labeled RayCastUp, 
 # RayCastDown, RayCastLeft, and RayCastRight

@@ -7,7 +7,7 @@ func _on_body_entered(body: CharacterBody2D) -> void:
 	# Slows down the engine to half speed when hit by an enemy
 	Engine.time_scale = 0.5
 	# This line of code will remove the collision shape form the player when the player is hit
-	body.get_node("CollisionSpape2D").queue_free()
+	body.get_node("CollisionShape2D").queue_free()
 	timer.start()
 
 
