@@ -212,3 +212,5 @@ autoplay = "Idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=357718023]
 position = Vector2(0, 6)
 shape = SubResource("CircleShape2D_0hbny")
+
+[node name="Timer" type="Timer" parent="." unique_id=394627499]

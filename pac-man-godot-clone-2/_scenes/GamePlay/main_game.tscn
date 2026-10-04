@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://w45ac1cqv5am" path="res://_scripts/GamePlay/game_manager.gd" id="1_vhx2k"]
 [ext_resource type="Texture2D" uid="uid://vooegrhxunne" path="res://_assets/Brackey's_Assets/Bracky'sSprites/sprites/world_tileset.png" id="2_j53e7"]
 [ext_resource type="PackedScene" uid="uid://b43qxfcqfkhbj" path="res://_scenes/Characters/Enemy/slime_ghost.tscn" id="3_avb7e"]
+[ext_resource type="PackedScene" uid="uid://2auosm5ca65a" path="res://_scenes/Characters/Player_Character/player.tscn" id="4_3s4a7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_avb7e"]
 texture = ExtResource("2_j53e7")
@@ -307,23 +308,26 @@ tile_set = SubResource("TileSet_g2twe")
 [node name="Ememies" type="Node" parent="." unique_id=914727167]
 
 [node name="SlimeGhost" parent="Ememies" unique_id=1948393237 instance=ExtResource("3_avb7e")]
-position = Vector2(533, 328)
+position = Vector2(490, 53)
 
 [node name="SlimeGhost2" parent="Ememies" unique_id=991702569 instance=ExtResource("3_avb7e")]
-position = Vector2(563, 357)
+position = Vector2(955, 303)
 
 [node name="SlimeGhost3" parent="Ememies" unique_id=1626422374 instance=ExtResource("3_avb7e")]
-position = Vector2(501, 355)
+position = Vector2(28, 475)
 
 [node name="SlimeGhost4" parent="Ememies" unique_id=1779320068 instance=ExtResource("3_avb7e")]
-position = Vector2(627, 355)
+position = Vector2(1098, 475)
 
 [node name="SlimeGhost5" parent="Ememies" unique_id=315526275 instance=ExtResource("3_avb7e")]
-position = Vector2(590, 331)
+position = Vector2(742, 85)
 
 [node name="SlimeGhost6" parent="Ememies" unique_id=2116045622 instance=ExtResource("3_avb7e")]
-position = Vector2(661, 332)
+position = Vector2(40, 111)
 
 [node name="Environment" type="Node" parent="." unique_id=274314734]
 
 [node name="PlayerCharacter" type="Node" parent="." unique_id=191602506]
+
+[node name="Player" parent="PlayerCharacter" unique_id=1434884311 instance=ExtResource("4_3s4a7")]
+position = Vector2(491, 371)
