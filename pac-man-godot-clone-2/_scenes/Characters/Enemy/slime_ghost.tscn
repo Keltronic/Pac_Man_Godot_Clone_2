@@ -117,6 +117,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_avb7e"]
 size = Vector2(8, 10.5)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_6sj1v"]
+
 [node name="SlimeGhost" type="Node2D" unique_id=1549547257]
 script = ExtResource("1_qyjfm")
 
@@ -128,6 +130,8 @@ autoplay = "Move"
 frame = 1
 
 [node name="DeathZone" parent="." unique_id=2037105438 instance=ExtResource("3_cw8o7")]
+collision_layer = 5
+collision_mask = 2
 
 [node name="EnemyCollision" type="CollisionShape2D" parent="DeathZone" unique_id=1312168567]
 position = Vector2(0, 6)
@@ -148,3 +152,13 @@ target_position = Vector2(0, 12)
 [node name="RayCastUp" type="RayCast2D" parent="." unique_id=1443414287]
 position = Vector2(0, 6)
 target_position = Vector2(0, -13)
+
+[node name="PlayerDetection" type="Area2D" parent="." unique_id=1444205475]
+collision_layer = 5
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection" unique_id=588051502]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_6sj1v")
+
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]

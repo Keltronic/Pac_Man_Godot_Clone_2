@@ -66,6 +66,7 @@ radius = 5.0
 
 [sub_resource type="Animation" id="Animation_nxp8u"]
 resource_name = "Pickup_Animation"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -109,7 +110,7 @@ tracks/3/path = NodePath(".")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.5),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -162,7 +163,8 @@ _data = {
 &"RESET": SubResource("Animation_2huiu")
 }
 
-[node name="Coin" type="Area2D" unique_id=811277827]
+[node name="Coin" type="Area2D" unique_id=811277827 groups=["GameGroup"]]
+collision_mask = 2
 script = ExtResource("1_0d0lj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=430733271]
