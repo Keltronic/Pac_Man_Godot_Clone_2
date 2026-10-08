@@ -1,3 +1,5 @@
+class_name Enemy
+
 extends Node2D
 
 # Constant values in the script

@@ -2,8 +2,8 @@ extends Node
 
 # Default score variable
 @export var player_score: int = 0
-@onready var player: CharacterBody2D = $Player
-@onready var enemy: Node2D = $SlimeGhost
+@onready var player: CharacterBody2D = null
+@onready var enemy: Node2D = null
 @onready var red_coin: Area2D = $RedCoin
 @onready var yellow_coin: Area2D = $Coin
 
