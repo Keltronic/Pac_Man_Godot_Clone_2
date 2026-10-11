@@ -403,100 +403,118 @@ horizontal_alignment = 1
 
 [node name="Collectables" type="Node" parent="." unique_id=1861512505]
 
-[node name="RedCoin" parent="Collectables" unique_id=1170975488 groups=["signal_emitters"] instance=ExtResource("5_56rpt")]
+[node name="FruitLives" type="Node" parent="Collectables" unique_id=733186899]
+
+[node name="RedCoins" type="Node" parent="Collectables" unique_id=141638896]
+
+[node name="RedCoin" parent="Collectables/RedCoins" unique_id=1170975488 groups=["signal_emitters"] instance=ExtResource("5_56rpt")]
 position = Vector2(718, 439)
 
-[node name="RedCoin2" parent="Collectables" unique_id=1329878916 groups=["signal_emitters"] instance=ExtResource("5_56rpt")]
+[node name="RedCoin2" parent="Collectables/RedCoins" unique_id=1329878916 groups=["signal_emitters"] instance=ExtResource("5_56rpt")]
 position = Vector2(43, 416)
 
-[node name="RedCoin3" parent="Collectables" unique_id=1480361124 groups=["signal_emitters"] instance=ExtResource("5_56rpt")]
+[node name="RedCoin3" parent="Collectables/RedCoins" unique_id=1480361124 groups=["signal_emitters"] instance=ExtResource("5_56rpt")]
 position = Vector2(24, 40)
 
-[node name="RedCoin4" parent="Collectables" unique_id=1297446672 groups=["signal_emitters"] instance=ExtResource("5_56rpt")]
+[node name="RedCoin4" parent="Collectables/RedCoins" unique_id=1297446672 groups=["signal_emitters"] instance=ExtResource("5_56rpt")]
 position = Vector2(1111, 34)
 
-[node name="RedCoin5" parent="Collectables" unique_id=1488548792 groups=["signal_emitters"] instance=ExtResource("5_56rpt")]
+[node name="RedCoin5" parent="Collectables/RedCoins" unique_id=1488548792 groups=["signal_emitters"] instance=ExtResource("5_56rpt")]
 position = Vector2(1081, 290)
 
-[node name="RedCoin6" parent="Collectables" unique_id=647259216 groups=["signal_emitters"] instance=ExtResource("5_56rpt")]
+[node name="RedCoin6" parent="Collectables/RedCoins" unique_id=647259216 groups=["signal_emitters"] instance=ExtResource("5_56rpt")]
 position = Vector2(558, 126)
 
-[node name="Coin" parent="Collectables" unique_id=811277827 instance=ExtResource("6_gyuqp")]
+[node name="YellowCoins" type="Node" parent="Collectables" unique_id=975302530]
+
+[node name="Coin" parent="Collectables/YellowCoins" unique_id=811277827 instance=ExtResource("6_gyuqp")]
 position = Vector2(392, 186)
 
-[node name="Coin2" parent="Collectables" unique_id=1152838282 instance=ExtResource("6_gyuqp")]
+[node name="Coin2" parent="Collectables/YellowCoins" unique_id=1152838282 instance=ExtResource("6_gyuqp")]
 position = Vector2(408, 186)
 
-[node name="Coin3" parent="Collectables" unique_id=373701102 instance=ExtResource("6_gyuqp")]
+[node name="Coin3" parent="Collectables/YellowCoins" unique_id=373701102 instance=ExtResource("6_gyuqp")]
 position = Vector2(424, 186)
 
-[node name="Coin4" parent="Collectables" unique_id=630298117 instance=ExtResource("6_gyuqp")]
+[node name="Coin4" parent="Collectables/YellowCoins" unique_id=630298117 instance=ExtResource("6_gyuqp")]
 position = Vector2(376, 186)
 
-[node name="Coin5" parent="Collectables" unique_id=1085227045 instance=ExtResource("6_gyuqp")]
+[node name="Coin5" parent="Collectables/YellowCoins" unique_id=1085227045 instance=ExtResource("6_gyuqp")]
 position = Vector2(152, 266)
 
-[node name="Coin6" parent="Collectables" unique_id=1530525142 instance=ExtResource("6_gyuqp")]
+[node name="Coin6" parent="Collectables/YellowCoins" unique_id=1530525142 instance=ExtResource("6_gyuqp")]
 position = Vector2(439, 186)
 
-[node name="Coin7" parent="Collectables" unique_id=624513661 instance=ExtResource("6_gyuqp")]
+[node name="Coin7" parent="Collectables/YellowCoins" unique_id=624513661 instance=ExtResource("6_gyuqp")]
 position = Vector2(168, 266)
 
-[node name="Coin8" parent="Collectables" unique_id=1526424305 instance=ExtResource("6_gyuqp")]
+[node name="Coin8" parent="Collectables/YellowCoins" unique_id=1526424305 instance=ExtResource("6_gyuqp")]
 position = Vector2(184, 266)
 
-[node name="Coin9" parent="Collectables" unique_id=1422260150 instance=ExtResource("6_gyuqp")]
+[node name="Coin9" parent="Collectables/YellowCoins" unique_id=1422260150 instance=ExtResource("6_gyuqp")]
 position = Vector2(200, 266)
 
-[node name="Coin10" parent="Collectables" unique_id=1032625543 instance=ExtResource("6_gyuqp")]
+[node name="Coin10" parent="Collectables/YellowCoins" unique_id=1032625543 instance=ExtResource("6_gyuqp")]
 position = Vector2(216, 266)
 
-[node name="Coin11" parent="Collectables" unique_id=1189983767 instance=ExtResource("6_gyuqp")]
+[node name="Coin11" parent="Collectables/YellowCoins" unique_id=1189983767 instance=ExtResource("6_gyuqp")]
 position = Vector2(232, 266)
 
-[node name="Coin12" parent="Collectables" unique_id=2111908196 instance=ExtResource("6_gyuqp")]
+[node name="Coin12" parent="Collectables/YellowCoins" unique_id=2111908196 instance=ExtResource("6_gyuqp")]
 position = Vector2(248, 266)
 
 [node name="Ememies" type="Node" parent="." unique_id=914727167]
 
-[node name="SlimeGhost" parent="Ememies" unique_id=1948393237 instance=ExtResource("3_avb7e")]
+[node name="SlimeGhost" parent="Ememies" unique_id=1948393237 node_paths=PackedStringArray("fragile_ghosts") instance=ExtResource("3_avb7e")]
 position = Vector2(490, 53)
+fragile_ghosts = [NodePath("../../Collectables/RedCoins/RedCoin"), NodePath("../../Collectables/RedCoins/RedCoin2"), NodePath("../../Collectables/RedCoins/RedCoin3"), NodePath("../../Collectables/RedCoins/RedCoin4"), NodePath("../../Collectables/RedCoins/RedCoin5"), NodePath("../../Collectables/RedCoins/RedCoin6")]
 
-[node name="SlimeGhost2" parent="Ememies" unique_id=991702569 instance=ExtResource("3_avb7e")]
+[node name="SlimeGhost2" parent="Ememies" unique_id=991702569 node_paths=PackedStringArray("fragile_ghosts") instance=ExtResource("3_avb7e")]
 position = Vector2(955, 303)
+fragile_ghosts = [NodePath("../../Collectables/RedCoins/RedCoin"), NodePath("../../Collectables/RedCoins/RedCoin2"), NodePath("../../Collectables/RedCoins/RedCoin3"), NodePath("../../Collectables/RedCoins/RedCoin4"), NodePath("../../Collectables/RedCoins/RedCoin5"), NodePath("../../Collectables/RedCoins/RedCoin6")]
 
-[node name="SlimeGhost3" parent="Ememies" unique_id=1626422374 instance=ExtResource("3_avb7e")]
+[node name="SlimeGhost3" parent="Ememies" unique_id=1626422374 node_paths=PackedStringArray("fragile_ghosts") instance=ExtResource("3_avb7e")]
 position = Vector2(28, 475)
+fragile_ghosts = [NodePath("../../Collectables/RedCoins/RedCoin"), NodePath("../../Collectables/RedCoins/RedCoin2"), NodePath("../../Collectables/RedCoins/RedCoin3"), NodePath("../../Collectables/RedCoins/RedCoin4"), NodePath("../../Collectables/RedCoins/RedCoin5"), NodePath("../../Collectables/RedCoins/RedCoin6")]
 
-[node name="SlimeGhost4" parent="Ememies" unique_id=1779320068 instance=ExtResource("3_avb7e")]
+[node name="SlimeGhost4" parent="Ememies" unique_id=1779320068 node_paths=PackedStringArray("fragile_ghosts") instance=ExtResource("3_avb7e")]
 position = Vector2(1098, 475)
+fragile_ghosts = [NodePath("../../Collectables/RedCoins/RedCoin"), NodePath("../../Collectables/RedCoins/RedCoin2"), NodePath("../../Collectables/RedCoins/RedCoin3"), NodePath("../../Collectables/RedCoins/RedCoin4"), NodePath("../../Collectables/RedCoins/RedCoin5"), NodePath("../../Collectables/RedCoins/RedCoin6")]
 
-[node name="SlimeGhost5" parent="Ememies" unique_id=315526275 instance=ExtResource("3_avb7e")]
+[node name="SlimeGhost5" parent="Ememies" unique_id=315526275 node_paths=PackedStringArray("fragile_ghosts") instance=ExtResource("3_avb7e")]
 position = Vector2(742, 85)
+fragile_ghosts = [NodePath("../../Collectables/RedCoins/RedCoin"), NodePath("../../Collectables/RedCoins/RedCoin2"), NodePath("../../Collectables/RedCoins/RedCoin3"), NodePath("../../Collectables/RedCoins/RedCoin4"), NodePath("../../Collectables/RedCoins/RedCoin5"), NodePath("../../Collectables/RedCoins/RedCoin6")]
 
-[node name="SlimeGhost6" parent="Ememies" unique_id=2116045622 instance=ExtResource("3_avb7e")]
+[node name="SlimeGhost6" parent="Ememies" unique_id=2116045622 node_paths=PackedStringArray("fragile_ghosts") instance=ExtResource("3_avb7e")]
 position = Vector2(40, 111)
+fragile_ghosts = [NodePath("../../Collectables/RedCoins/RedCoin"), NodePath("../../Collectables/RedCoins/RedCoin2"), NodePath("../../Collectables/RedCoins/RedCoin3"), NodePath("../../Collectables/RedCoins/RedCoin4"), NodePath("../../Collectables/RedCoins/RedCoin5"), NodePath("../../Collectables/RedCoins/RedCoin6")]
 
-[node name="SlimeGhost7" parent="Ememies" unique_id=1549547257 instance=ExtResource("3_avb7e")]
+[node name="SlimeGhost7" parent="Ememies" unique_id=1549547257 node_paths=PackedStringArray("fragile_ghosts") instance=ExtResource("3_avb7e")]
 position = Vector2(99, 296)
+fragile_ghosts = [NodePath("../../Collectables/RedCoins/RedCoin"), NodePath("../../Collectables/RedCoins/RedCoin2"), NodePath("../../Collectables/RedCoins/RedCoin3"), NodePath("../../Collectables/RedCoins/RedCoin4"), NodePath("../../Collectables/RedCoins/RedCoin5"), NodePath("../../Collectables/RedCoins/RedCoin6")]
 
-[node name="SlimeGhost8" parent="Ememies" unique_id=1146757759 instance=ExtResource("3_avb7e")]
+[node name="SlimeGhost8" parent="Ememies" unique_id=1146757759 node_paths=PackedStringArray("fragile_ghosts") instance=ExtResource("3_avb7e")]
 position = Vector2(381, 375)
+fragile_ghosts = [NodePath("../../Collectables/RedCoins/RedCoin"), NodePath("../../Collectables/RedCoins/RedCoin2"), NodePath("../../Collectables/RedCoins/RedCoin3"), NodePath("../../Collectables/RedCoins/RedCoin4"), NodePath("../../Collectables/RedCoins/RedCoin5"), NodePath("../../Collectables/RedCoins/RedCoin6")]
 
-[node name="SlimeGhost9" parent="Ememies" unique_id=984198079 instance=ExtResource("3_avb7e")]
+[node name="SlimeGhost9" parent="Ememies" unique_id=984198079 node_paths=PackedStringArray("fragile_ghosts") instance=ExtResource("3_avb7e")]
 position = Vector2(275, 68)
+fragile_ghosts = [NodePath("../../Collectables/RedCoins/RedCoin"), NodePath("../../Collectables/RedCoins/RedCoin2"), NodePath("../../Collectables/RedCoins/RedCoin3"), NodePath("../../Collectables/RedCoins/RedCoin4"), NodePath("../../Collectables/RedCoins/RedCoin5"), NodePath("../../Collectables/RedCoins/RedCoin6")]
 
-[node name="SlimeGhost10" parent="Ememies" unique_id=452620447 instance=ExtResource("3_avb7e")]
+[node name="SlimeGhost10" parent="Ememies" unique_id=452620447 node_paths=PackedStringArray("fragile_ghosts") instance=ExtResource("3_avb7e")]
 position = Vector2(730, 222)
+fragile_ghosts = [NodePath("../../Collectables/RedCoins/RedCoin"), NodePath("../../Collectables/RedCoins/RedCoin2"), NodePath("../../Collectables/RedCoins/RedCoin3"), NodePath("../../Collectables/RedCoins/RedCoin4"), NodePath("../../Collectables/RedCoins/RedCoin5"), NodePath("../../Collectables/RedCoins/RedCoin6")]
 
-[node name="SlimeGhost11" parent="Ememies" unique_id=967385618 instance=ExtResource("3_avb7e")]
+[node name="SlimeGhost11" parent="Ememies" unique_id=967385618 node_paths=PackedStringArray("fragile_ghosts") instance=ExtResource("3_avb7e")]
 position = Vector2(246, 437)
+fragile_ghosts = [NodePath("../../Collectables/RedCoins/RedCoin"), NodePath("../../Collectables/RedCoins/RedCoin2"), NodePath("../../Collectables/RedCoins/RedCoin3"), NodePath("../../Collectables/RedCoins/RedCoin4"), NodePath("../../Collectables/RedCoins/RedCoin5"), NodePath("../../Collectables/RedCoins/RedCoin6")]
 
-[node name="SlimeGhost12" parent="Ememies" unique_id=234525903 instance=ExtResource("3_avb7e")]
+[node name="SlimeGhost12" parent="Ememies" unique_id=234525903 node_paths=PackedStringArray("fragile_ghosts") instance=ExtResource("3_avb7e")]
 position = Vector2(1109, 76)
+fragile_ghosts = [NodePath("../../Collectables/RedCoins/RedCoin"), NodePath("../../Collectables/RedCoins/RedCoin2"), NodePath("../../Collectables/RedCoins/RedCoin3"), NodePath("../../Collectables/RedCoins/RedCoin4"), NodePath("../../Collectables/RedCoins/RedCoin5"), NodePath("../../Collectables/RedCoins/RedCoin6")]
 
 [node name="PlayerCharacter" type="Node" parent="." unique_id=191602506]
 
 [node name="Player" parent="PlayerCharacter" unique_id=1434884311 node_paths=PackedStringArray("invincibility_nodes") instance=ExtResource("4_3s4a7")]
 position = Vector2(491, 371)
-invincibility_nodes = [NodePath("../../Collectables/RedCoin"), NodePath("../../Collectables/RedCoin2"), NodePath("../../Collectables/RedCoin3"), NodePath("../../Collectables/RedCoin4"), NodePath("../../Collectables/RedCoin5"), NodePath("../../Collectables/RedCoin6")]
+invincibility_nodes = [NodePath("../../Collectables/RedCoins/RedCoin"), NodePath("../../Collectables/RedCoins/RedCoin2"), NodePath("../../Collectables/RedCoins/RedCoin3"), NodePath("../../Collectables/RedCoins/RedCoin4"), NodePath("../../Collectables/RedCoins/RedCoin5"), NodePath("../../Collectables/RedCoins/RedCoin6")]

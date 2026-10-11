@@ -123,9 +123,8 @@ script = ExtResource("1_qyjfm")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=259373234]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_5w0vt")
-animation = &"Move"
+animation = &"Fear"
 autoplay = "Move"
-frame = 1
 
 [node name="DeathZone" parent="." unique_id=2037105438 instance=ExtResource("3_cw8o7")]
 collision_layer = 5

@@ -1,6 +1,7 @@
 extends Node2D
 
-# Constant values in the script
+## Constant values in the script
+## This variable will never be able to change at any point in the game
 const speed: float = 60.0
 
 # Regular variables in the script
@@ -14,6 +15,13 @@ var direction: Vector2 = Vector2.DOWN
 @onready var ray_cast_left: RayCast2D = $RayCastLeft
 @onready var ray_cast_right: RayCast2D = $RayCastRight
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@export var enemy_health: int = 1
+@export var fragile_ghosts: Array[Node] = []
+
+func _ready() -> void:
+	for Node in fragile_ghosts:
+		if Node and Node.has_signal("ghost_can_take_damage"):
+			Node.ghost_can_take_damage.connect(_player_is_threat)
 
 func _physics_process(delta: float) -> void:
 	if ray_cast_right.is_colliding():
@@ -29,3 +37,8 @@ func _physics_process(delta: float) -> void:
 		direction.y = -1
 		animated_sprite.flip_h = false
 	position += direction * speed * delta
+	
+func _player_is_threat(destructable_enemy):
+	if destructable_enemy:
+		animated_sprite.play("Fear")
+		print("We're in danger!")
