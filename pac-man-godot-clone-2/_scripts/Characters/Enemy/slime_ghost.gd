@@ -1,5 +1,3 @@
-class_name Enemy
-
 extends Node2D
 
 # Constant values in the script
@@ -31,6 +29,3 @@ func _physics_process(delta: float) -> void:
 		direction.y = -1
 		animated_sprite.flip_h = false
 	position += direction * speed * delta
-
-func _on_player_detection_body_entered(body: CharacterBody2D) -> void:
-	pass # Replace with function body.

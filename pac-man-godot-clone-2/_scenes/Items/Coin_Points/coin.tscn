@@ -163,7 +163,7 @@ _data = {
 &"RESET": SubResource("Animation_2huiu")
 }
 
-[node name="Coin" type="Area2D" unique_id=811277827 groups=["GameGroup"]]
+[node name="Coin" type="Area2D" unique_id=811277827]
 collision_mask = 2
 script = ExtResource("1_0d0lj")
 
@@ -179,7 +179,7 @@ shape = SubResource("CircleShape2D_g2twe")
 [node name="PickupSound" type="AudioStreamPlayer2D" parent="." unique_id=142560459]
 stream = ExtResource("3_nxp8u")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1612010874]
+[node name="PointCoin" type="AnimationPlayer" parent="." unique_id=1612010874]
 libraries/ = SubResource("AnimationLibrary_3ooyn")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

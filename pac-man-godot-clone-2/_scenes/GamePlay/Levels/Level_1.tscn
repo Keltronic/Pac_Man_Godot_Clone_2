@@ -2,8 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://daqrgwbe0uhva" path="res://_scenes/GamePlay/GameManager/game_manager.tscn" id="1_3s4a7"]
 [ext_resource type="Texture2D" uid="uid://vooegrhxunne" path="res://_assets/Brackey's_Assets/Bracky'sSprites/sprites/world_tileset.png" id="2_j53e7"]
+[ext_resource type="Texture2D" uid="uid://drnle82f3m24t" path="res://_assets/Brackey's_Assets/Bracky'sSprites/sprites/knight.png" id="3_2s1mc"]
 [ext_resource type="PackedScene" uid="uid://b43qxfcqfkhbj" path="res://_scenes/Characters/Enemy/slime_ghost.tscn" id="3_avb7e"]
 [ext_resource type="PackedScene" uid="uid://2auosm5ca65a" path="res://_scenes/Characters/Player_Character/player.tscn" id="4_3s4a7"]
+[ext_resource type="FontFile" uid="uid://brc818nif74t4" path="res://_assets/Brackey's_Assets/Bracky'sSprites/fonts/PixelOperator8.ttf" id="4_kax2t"]
+[ext_resource type="PackedScene" uid="uid://dav3rirpe35ld" path="res://_scenes/Items/RedCoin/red_coin.tscn" id="5_56rpt"]
+[ext_resource type="PackedScene" uid="uid://dai5w5ti3ax77" path="res://_scenes/Items/Coin_Points/coin.tscn" id="6_gyuqp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_avb7e"]
 texture = ExtResource("2_j53e7")
@@ -285,7 +289,43 @@ texture = ExtResource("2_j53e7")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_3s4a7")
 
-[node name="MainGame" type="Node2D" unique_id=466456397]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kax2t"]
+atlas = ExtResource("3_2s1mc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56rpt"]
+atlas = ExtResource("3_2s1mc")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gyuqp"]
+atlas = ExtResource("3_2s1mc")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swosi"]
+atlas = ExtResource("3_2s1mc")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5w0vt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kax2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56rpt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gyuqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swosi")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Level1" type="Node2D" unique_id=466456397]
 
 [node name="GameManager" parent="." unique_id=822832373 instance=ExtResource("1_3s4a7")]
 unique_name_in_owner = true
@@ -304,7 +344,118 @@ tile_set = SubResource("TileSet_g2twe")
 
 [node name="LivesAndPointsLayer" type="TileMapLayer" parent="Environment" unique_id=223924422]
 
+[node name="PlayerInfo" type="Node" parent="Environment" unique_id=749544776]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Environment/PlayerInfo" unique_id=589266408]
+texture_filter = 1
+position = Vector2(36, 551)
+sprite_frames = SubResource("SpriteFrames_5w0vt")
+autoplay = "default"
+
+[node name="NumberOfLives" type="Label" parent="Environment/PlayerInfo" unique_id=496559170]
+texture_filter = 1
+offset_left = 51.0
+offset_top = 548.0
+offset_right = 175.0
+offset_bottom = 571.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_kax2t")
+theme_override_font_sizes/font_size = 16
+text = "0"
+
+[node name="NumberOfLivesTitle" type="Label" parent="Environment/PlayerInfo" unique_id=1039422127]
+texture_filter = 1
+offset_left = 20.0
+offset_top = 517.0
+offset_right = 173.0
+offset_bottom = 540.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_kax2t")
+theme_override_font_sizes/font_size = 16
+text = "Lives"
+horizontal_alignment = 1
+
+[node name="PointCollection" type="Node" parent="Environment" unique_id=1873137689]
+
+[node name="PointsCollected" type="Label" parent="Environment/PointCollection" unique_id=64151315]
+texture_filter = 1
+offset_left = 479.0
+offset_top = 545.0
+offset_right = 1129.0
+offset_bottom = 568.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_kax2t")
+theme_override_font_sizes/font_size = 16
+text = "0"
+horizontal_alignment = 1
+
+[node name="PointsTitle" type="Label" parent="Environment/PointCollection" unique_id=1203224011]
+texture_filter = 1
+offset_left = 475.0
+offset_top = 519.0
+offset_right = 1131.0
+offset_bottom = 542.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_kax2t")
+theme_override_font_sizes/font_size = 16
+text = "Points"
+horizontal_alignment = 1
+
 [node name="Collectables" type="Node" parent="." unique_id=1861512505]
+
+[node name="RedCoin" parent="Collectables" unique_id=1170975488 groups=["signal_emitters"] instance=ExtResource("5_56rpt")]
+position = Vector2(718, 439)
+
+[node name="RedCoin2" parent="Collectables" unique_id=1329878916 groups=["signal_emitters"] instance=ExtResource("5_56rpt")]
+position = Vector2(43, 416)
+
+[node name="RedCoin3" parent="Collectables" unique_id=1480361124 groups=["signal_emitters"] instance=ExtResource("5_56rpt")]
+position = Vector2(24, 40)
+
+[node name="RedCoin4" parent="Collectables" unique_id=1297446672 groups=["signal_emitters"] instance=ExtResource("5_56rpt")]
+position = Vector2(1111, 34)
+
+[node name="RedCoin5" parent="Collectables" unique_id=1488548792 groups=["signal_emitters"] instance=ExtResource("5_56rpt")]
+position = Vector2(1081, 290)
+
+[node name="RedCoin6" parent="Collectables" unique_id=647259216 groups=["signal_emitters"] instance=ExtResource("5_56rpt")]
+position = Vector2(558, 126)
+
+[node name="Coin" parent="Collectables" unique_id=811277827 instance=ExtResource("6_gyuqp")]
+position = Vector2(392, 186)
+
+[node name="Coin2" parent="Collectables" unique_id=1152838282 instance=ExtResource("6_gyuqp")]
+position = Vector2(408, 186)
+
+[node name="Coin3" parent="Collectables" unique_id=373701102 instance=ExtResource("6_gyuqp")]
+position = Vector2(424, 186)
+
+[node name="Coin4" parent="Collectables" unique_id=630298117 instance=ExtResource("6_gyuqp")]
+position = Vector2(376, 186)
+
+[node name="Coin5" parent="Collectables" unique_id=1085227045 instance=ExtResource("6_gyuqp")]
+position = Vector2(152, 266)
+
+[node name="Coin6" parent="Collectables" unique_id=1530525142 instance=ExtResource("6_gyuqp")]
+position = Vector2(439, 186)
+
+[node name="Coin7" parent="Collectables" unique_id=624513661 instance=ExtResource("6_gyuqp")]
+position = Vector2(168, 266)
+
+[node name="Coin8" parent="Collectables" unique_id=1526424305 instance=ExtResource("6_gyuqp")]
+position = Vector2(184, 266)
+
+[node name="Coin9" parent="Collectables" unique_id=1422260150 instance=ExtResource("6_gyuqp")]
+position = Vector2(200, 266)
+
+[node name="Coin10" parent="Collectables" unique_id=1032625543 instance=ExtResource("6_gyuqp")]
+position = Vector2(216, 266)
+
+[node name="Coin11" parent="Collectables" unique_id=1189983767 instance=ExtResource("6_gyuqp")]
+position = Vector2(232, 266)
+
+[node name="Coin12" parent="Collectables" unique_id=2111908196 instance=ExtResource("6_gyuqp")]
+position = Vector2(248, 266)
 
 [node name="Ememies" type="Node" parent="." unique_id=914727167]
 
@@ -333,7 +484,7 @@ position = Vector2(99, 296)
 position = Vector2(381, 375)
 
 [node name="SlimeGhost9" parent="Ememies" unique_id=984198079 instance=ExtResource("3_avb7e")]
-position = Vector2(288, 32)
+position = Vector2(275, 68)
 
 [node name="SlimeGhost10" parent="Ememies" unique_id=452620447 instance=ExtResource("3_avb7e")]
 position = Vector2(730, 222)
@@ -346,5 +497,6 @@ position = Vector2(1109, 76)
 
 [node name="PlayerCharacter" type="Node" parent="." unique_id=191602506]
 
-[node name="Player" parent="PlayerCharacter" unique_id=1434884311 instance=ExtResource("4_3s4a7")]
+[node name="Player" parent="PlayerCharacter" unique_id=1434884311 node_paths=PackedStringArray("invincibility_nodes") instance=ExtResource("4_3s4a7")]
 position = Vector2(491, 371)
+invincibility_nodes = [NodePath("../../Collectables/RedCoin"), NodePath("../../Collectables/RedCoin2"), NodePath("../../Collectables/RedCoin3"), NodePath("../../Collectables/RedCoin4"), NodePath("../../Collectables/RedCoin5"), NodePath("../../Collectables/RedCoin6")]
