@@ -515,6 +515,7 @@ fragile_ghosts = [NodePath("../../Collectables/RedCoins/RedCoin"), NodePath("../
 
 [node name="PlayerCharacter" type="Node" parent="." unique_id=191602506]
 
-[node name="Player" parent="PlayerCharacter" unique_id=1434884311 node_paths=PackedStringArray("invincibility_nodes") instance=ExtResource("4_3s4a7")]
+[node name="Player" parent="PlayerCharacter" unique_id=1434884311 node_paths=PackedStringArray("invincibility_nodes", "kill_player_ghost_nodes") instance=ExtResource("4_3s4a7")]
 position = Vector2(491, 371)
 invincibility_nodes = [NodePath("../../Collectables/RedCoins/RedCoin"), NodePath("../../Collectables/RedCoins/RedCoin2"), NodePath("../../Collectables/RedCoins/RedCoin3"), NodePath("../../Collectables/RedCoins/RedCoin4"), NodePath("../../Collectables/RedCoins/RedCoin5"), NodePath("../../Collectables/RedCoins/RedCoin6")]
+kill_player_ghost_nodes = [null, null, null, null, null, null, null, null, null, null, null, null]
