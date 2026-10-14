@@ -62,3 +62,6 @@ func _player_invincibility(player_invincible):
 func _player_is_dead(player_killed):
 	if player_killed:
 		sprite_animation.play("Death")
+
+		
+		
