@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dqkkj3kcd4xvr"]
+
+[ext_resource type="Script" uid="uid://cfs6hkm00lbl6" path="res://_scripts/GamePlay/Menus/MainMenu/main_menu.gd" id="1_f4837"]
+[ext_resource type="FontFile" uid="uid://deefav6hr8eme" path="res://_assets/Brackey's_Assets/Bracky'sSprites/fonts/PixelOperator8-Bold.ttf" id="1_kmpkr"]
+
+[node name="MainMenu" type="Control" unique_id=1741548605]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f4837")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1611204385]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 645.0
+color = Color(0, 0, 0.34789982, 1)
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=257600756]
+texture_filter = 1
+layout_mode = 0
+offset_left = 345.0
+offset_top = 41.0
+offset_right = 816.0
+offset_bottom = 161.0
+theme_override_colors/background_color = Color(1, 1, 1, 0)
+theme_override_fonts/font = ExtResource("1_kmpkr")
+theme_override_font_sizes/font_size = 48
+text = "	Knight 
+  Collector"
+wrap_mode = 1
+
+[node name="PlayGameBTN" type="Button" parent="." unique_id=1014130473]
+texture_filter = 1
+layout_mode = 0
+offset_left = 429.0
+offset_top = 250.0
+offset_right = 713.0
+offset_bottom = 349.0
+theme_override_fonts/font = ExtResource("1_kmpkr")
+theme_override_font_sizes/font_size = 32
+text = "PLAY GAME"
+
+[node name="QuitGameBTN" type="Button" parent="." unique_id=2096588059]
+texture_filter = 1
+layout_mode = 0
+offset_left = 430.0
+offset_top = 385.0
+offset_right = 714.0
+offset_bottom = 484.0
+theme_override_fonts/font = ExtResource("1_kmpkr")
+theme_override_font_sizes/font_size = 32
+text = "QUIT GAME"
+
+[connection signal="pressed" from="QuitGameBTN" to="." method="_on_quit_game_btn_pressed"]
