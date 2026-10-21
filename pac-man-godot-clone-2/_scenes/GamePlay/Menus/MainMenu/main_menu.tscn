@@ -16,7 +16,7 @@ script = ExtResource("1_f4837")
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 645.0
-color = Color(0, 0, 0.34789982, 1)
+color = Color(0.14901961, 0, 0.34901962, 1)
 
 [node name="TextEdit" type="TextEdit" parent="." unique_id=257600756]
 texture_filter = 1
@@ -25,7 +25,7 @@ offset_left = 345.0
 offset_top = 41.0
 offset_right = 816.0
 offset_bottom = 161.0
-theme_override_colors/background_color = Color(1, 1, 1, 0)
+theme_override_colors/background_color = Color(0, 1, 1, 0.53333336)
 theme_override_fonts/font = ExtResource("1_kmpkr")
 theme_override_font_sizes/font_size = 48
 text = "	Knight 
@@ -39,6 +39,7 @@ offset_left = 429.0
 offset_top = 250.0
 offset_right = 713.0
 offset_bottom = 349.0
+theme_override_colors/icon_pressed_color = Color(0.66557163, 0, 0.0083587235, 1)
 theme_override_fonts/font = ExtResource("1_kmpkr")
 theme_override_font_sizes/font_size = 32
 text = "PLAY GAME"
@@ -50,8 +51,10 @@ offset_left = 430.0
 offset_top = 385.0
 offset_right = 714.0
 offset_bottom = 484.0
+theme_override_colors/icon_pressed_color = Color(0, 0, 1, 1)
 theme_override_fonts/font = ExtResource("1_kmpkr")
 theme_override_font_sizes/font_size = 32
 text = "QUIT GAME"
 
+[connection signal="pressed" from="PlayGameBTN" to="." method="_on_play_game_btn_pressed"]
 [connection signal="pressed" from="QuitGameBTN" to="." method="_on_quit_game_btn_pressed"]

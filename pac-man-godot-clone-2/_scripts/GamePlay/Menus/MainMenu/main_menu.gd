@@ -13,3 +13,7 @@ func _process(delta: float) -> void:
 
 func _on_quit_game_btn_pressed() -> void:
 	pass # Replace with function body.
+
+
+func _on_play_game_btn_pressed() -> void:
+	pass # Replace with function body.
